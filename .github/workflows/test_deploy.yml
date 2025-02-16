@@ -2,23 +2,25 @@ name: Test And Deploy
 on:
   push:
     branches:
-      -main
+      - main
 jobs:
-  test: Run Pytest Tests
-  runs-on: ubuntu-latest
+  test:
+    name: Test
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Repository
-      uses: action/checkout@v4
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version:'3.11'
-    - name: Install Dependencies
-      run: pip install -r requirements.txt
 
-    - name: Run Test
-      run: pytest
+    steps:
+      - name: Checkout Repository
+        uses: action/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Test
+        run: pytest
 
 
 
