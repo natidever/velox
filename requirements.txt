@@ -7,3 +7,5 @@ solana==0.36.5
 solders==0.25.0
 Django==5.1.6
 gunicorn==23.0.0
+aiogram==3.18.0
+python-dotenv==1.0.1
