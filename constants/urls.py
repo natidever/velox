@@ -1,0 +1,1 @@
+DEV_NET_URL:str="https://api.devnet.solana.com"
