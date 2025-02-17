@@ -1,6 +1,6 @@
 
 
-from bot.constants.urls import DEV_NET_URL
+from bot.constants.endpoints import DEV_NET_URL
 
 from solders.keypair import Keypair
 from solana.rpc.api import Client
