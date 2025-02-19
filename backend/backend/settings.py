@@ -30,8 +30,8 @@ ALLOWED_HOSTS = [
     'localhost',  # For local testing
     '127.0.0.1'
 ]
-ROOT_URLCONF = 'backend.urls'  # Ensure this points to your urls.py
-# ROOT_URLCONF = 'backend.backend.urls'  # Ensure this points to your urls.py
+# ROOT_URLCONF = 'backend.urls'  # Ensure this points to your urls.py
+ROOT_URLCONF = 'backend.backend.urls'  # Ensure this points to your urls.py
 
 # Application definition
 
