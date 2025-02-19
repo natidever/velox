@@ -3,7 +3,7 @@ import sys
 import os
 
 # Get the absolute path of the project root
-ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+ROOT_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(ROOT_DIR)
 
-# Add root directory to sys.path
-sys.path.insert(0, ROOT_DIR)
+print(f'yelllow :{ROOT_DIR}')

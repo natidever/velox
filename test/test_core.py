@@ -1,5 +1,12 @@
+import os
+import sys
 
-from ..blockchain.wallet import create_wallet
+ROOT_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))  # Moves up two levels
+PARENT_DIR = os.path.dirname(ROOT_DIR)
+sys.path.append(PARENT_DIR)
+
+from bot.blockchain.wallet import create_wallet
+
 
 def test_create_wallet():
     wallet_address,private_key=create_wallet()
