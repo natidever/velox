@@ -1,5 +1,4 @@
 
-from ..velox_telegram_bot.main import add
 import sys
 import os
 

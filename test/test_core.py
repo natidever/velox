@@ -1,6 +1,4 @@
 
-import pytest
-from ..velox_telegram_bot.main import add
 from ..blockchain.wallet import create_wallet
 
 def test_create_wallet():
