@@ -21,7 +21,6 @@ def check_wallet_balance(public_key):
 
 
 public_address ,private_keys=create_wallet()
-
 check_wallet_balance(public_address)
 
 
