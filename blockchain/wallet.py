@@ -19,7 +19,6 @@ def check_wallet_balance(public_key):
         wallet_balance=wallet_data.value
         print(f"wallet_balance :- {wallet_balance}SOL")
 
-
 public_address ,private_keys=create_wallet()
 check_wallet_balance(public_address)
 

@@ -14,6 +14,7 @@ async def handle_start(msg:types.message)->None:
 
 
 async def main()->None:
+   await bot.delete_webhook()
    await dp.start_polling(bot)
 
 
