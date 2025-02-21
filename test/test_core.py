@@ -1,7 +1,7 @@
 import os
 import sys
 
-from ..blockchain.wallet import create_wallet
+from blockchain.wallet import create_wallet
 
 
 def test_create_wallet():
