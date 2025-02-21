@@ -19,9 +19,14 @@ async def handle_start(msg:types.message)->None:
 
 
 async def main()->None:
-   await bot.delete_webhook()
+   # await bot.delete_webhook()
    await dp.start_polling(bot)
 
 
 if __name__ == '__main__':
     asyncio.run(main())
+
+    # export
+    # DOCKER_UID =$(id - u)
+    # export
+    # DOCKER_GID =$(id - g)
