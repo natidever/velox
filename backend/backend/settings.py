@@ -30,7 +30,6 @@ ALLOWED_HOSTS = [
     'velox-rrwr.onrender.com',  # Your Render domain
     'localhost',  # For local testing
     '127.0.0.1',
-    os.getenv('ALLOWED_HOSTS', '*').split(',')
 ]
 ROOT_URLCONF = 'backend.urls'  # Ensure this points to your urls.py
 # ROOT_URLCONF = 'backend.urls'  # Ensure this points to your urls.py
