@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent.parent  # Add one more parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,10 +29,11 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'velox-rrwr.onrender.com',  # Your Render domain
     'localhost',  # For local testing
-    '127.0.0.1'
+    '127.0.0.1',
+    os.getenv('ALLOWED_HOSTS', '*').split(',')
 ]
+ROOT_URLCONF = 'backend.urls'  # Ensure this points to your urls.py
 # ROOT_URLCONF = 'backend.urls'  # Ensure this points to your urls.py
-ROOT_URLCONF = 'backend.backend.urls'  # Ensure this points to your urls.py
 
 # Application definition
 
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'velox',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +88,7 @@ DATABASES = {
 }
 
 
-# Password validation
+# Password validationback
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [

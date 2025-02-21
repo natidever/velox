@@ -1,0 +1,18 @@
+
+services:
+  web: 
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # - DJANGO_SETTINGS_MODULE=backend.backend.settings
+      - VELOX_TELEGRAM_TOKEN=${VELOX_TELEGRAM_TOKEN}
+      - PYTHONPATH=/app
+    volumes:
+      - .:/app
+    user: "${DOCKER_UID}:${DOCKER_GID}"
+
+
+
+    
