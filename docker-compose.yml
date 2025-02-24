@@ -1,18 +1,52 @@
 
+#services:
+#  web:
+#    build: .
+#    ports:
+#      - "8000:8000"
+#    environment:
+#      - PORT=8000
+#      # - DJANGO_SETTINGS_MODULE=backend.backend.settings
+#      - VELOX_TELEGRAM_TOKEN=${VELOX_TELEGRAM_TOKEN}
+#      - PYTHONPATH=/app
+#    volumes:
+#      - .:/app
+#    user: "${DOCKER_UID}:${DOCKER_GID}"
+#
+
+
 services:
-  web: 
-    build: .
+  app_prod:
+    build:
+      context: .
+      target: prod
     ports:
       - "8000:8000"
     environment:
       - PORT=8000
       # - DJANGO_SETTINGS_MODULE=backend.backend.settings
       - VELOX_TELEGRAM_TOKEN=${VELOX_TELEGRAM_TOKEN}
-      - PYTHONPATH=/app
+       - PYTHONPATH=/app
+    volumes:
+#      - .:/app
+      - .:/app:delegated
+    user: "${DOCKER_UID}:${DOCKER_GID}"
+
+
+  app_dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+#       - DJANGO_SETTINGS_MODULE=backend.settings
+      - VELOX_TELEGRAM_TOKEN=${VELOX_TELEGRAM_TOKEN}
+      - PYTHONPATH=/app/velox_telegram_bot
+
     volumes:
       - .:/app
     user: "${DOCKER_UID}:${DOCKER_GID}"
 
 
-
-    
