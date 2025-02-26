@@ -1,5 +1,6 @@
 import aiohttp
 class SessionManager:
+    ##TODO:use __aenter__ __aexit__
     def __init__(self):
         self.session=None
     async def get_session(self):

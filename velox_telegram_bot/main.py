@@ -30,23 +30,23 @@ bot=Bot(token=telegram_token)
 
 @dp.message(CommandStart())
 async def handle_start(msg:types.Message )->None:
-    public,private=create_wallet()
+    # public,private=create_wallet()
     # user_id=msg.from_user.id
     dev_user_id=int(random.random()*1000000)
     print(f'user_id:{dev_user_id}')
-    user ,wallet =await database_functions.store_user_and_wallet(
-        user_id=dev_user_id,
-        private_key=private,
-        wallet_address=public
-    )
-    print(f"User and Wallet are Created and Stored :{user,wallet}")
+    # user ,wallet =await database_functions.store_user_and_wallet(
+    #     user_id=dev_user_id,
+    #     private_key=private,
+    #     wallet_address=public
+    # )
+    print(f"User and Wallet are Created and Stored :Wallet")
     keyboard=InlineKeyboardBuilder()
 
     keyboard.row(
         InlineKeyboardButton(text="Buy", callback_data=Callback.BUY.value),
         InlineKeyboardButton(text="Sell", callback_data='sell_action')
     )
-    await msg.answer(text=f"Your wallet address : {public}" ,reply_markup=keyboard.as_markup())
+    await msg.answer(text=f"Your wallet address : " ,reply_markup=keyboard.as_markup())
 
 
 
@@ -55,15 +55,19 @@ bind_handler(dp)
 async def main()->None:
    prs= PriceService()
    response=await prs.get_token_detail("TRUMP")
-   print(f"response :{response}")
+   from data.token_data import TokenData
+   from pydantic import ValidationError, validate_call
    try:
-       await session_manager.get_session()
-       await dp.start_polling(bot)
-   finally:
-          await session_manager.close_session()
+      token_data =TokenData.model_validate(response)
+      first_pair=token_data.pairs[0]
+      address=first_pair.pairAddress
+
+      print(f"formated_response :{address}")
+   except ValidationError as exc:
+      print(f"Error :{repr(exc.errors()[0]['type'])}")
 
 
-
+   await dp.start_polling(bot)
 
 
 if __name__ == '__main__':
