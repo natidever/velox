@@ -13,16 +13,17 @@
 
 # wait
 
-#!/bin/bash
 
-# Navigate to the app directory
 cd /app
 
-# Run Django migrations
+# Run Django commands
 cd backend
-python manage.py makemigrations velox
 python manage.py migrate
+python manage.py runserver 0.0.0.0:8000  &
 
-# Start the development server and bot reloader
+
+# Run bot
 cd ..
-python dev_server.py
+python velox_telegram_bot/main.py &
+
+wait

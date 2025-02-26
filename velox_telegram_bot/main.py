@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 from aiogram.utils.keyboard import  InlineKeyboardBuilder,InlineKeyboardButton
 
 ##Local Modules
-# from services.session_manager import session_manager
+from services.session_manager import session_manager
+from services.price_service import PriceService
 
 from blockchain.wallet import create_wallet
 from callback_handler import transaction_router,bind_handler
@@ -52,8 +53,15 @@ async def handle_start(msg:types.Message )->None:
 dp.include_router(transaction_router)
 bind_handler(dp)
 async def main()->None:
-
+   prs= PriceService()
+   response=await prs.get_token_detail("TRUMP")
+   print(f"response :{response}")
+   try:
+       await session_manager.get_session()
        await dp.start_polling(bot)
+   finally:
+          await session_manager.close_session()
+
 
 
 
