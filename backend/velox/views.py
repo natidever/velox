@@ -35,7 +35,7 @@ def index(request):
 async def handle_webhook(request:HttpRequest)->HttpResponse:
     recived_update=json.loads(request.body.decode('utf-8'))
     aiogram_formated_update=types.Update(**recived_update)
-    logger.debug(f'aiogram_formated_update:{aiogram_formated_update}')
+    logger.debug(f'd:{aiogram_formated_update}')
     await dp.feed_update(bot=bot,update=aiogram_formated_update)
 
 

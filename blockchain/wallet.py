@@ -21,27 +21,27 @@ def check_wallet_balance(public_key):
 
 public_address ,private_keys=create_wallet()
 check_wallet_balance(public_address)
-
-
-
-
-
-
-
-
-
-
-
-
-
-# print(f"wallet_address :{wallet_address}")
-# print(f"private_key :{private_key}")
 #
-# ## Test if the wallet is correctly created by checking the account balance of SOL
+# def savetodatabase():
+# # svv
 #
-# client = Client("https://api.devnet.solana.com")
-# wallet_balance = client.get_balance(wallet_address)
-# print(f"WALLET_BALANCE :{wallet_balance}")
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# # print(f"wallet_address :{wallet_address}")
+# # print(f"private_key :{private_key}")
+# #
+# # ## Test if the wallet is correctly created by checking the account balance of SOL
+# #
+# # client = Client("https://api.devnet.solana.com")
+# # wallet_balance = client.get_balance(wallet_address)
+# # print(f"WALLET_BALANCE :{wallet_balance}")
 
 
 
