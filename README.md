@@ -1,4 +1,7 @@
 
+<p align="center">
+  <img src="https://github.com/natidever/velox/blob/main/logo.jpg" alt="Velox Banner" width="100%" />
+</p>
 ---
 
 # ⚡️ Velox - The Fastest Solana Telegram Trading Bot
