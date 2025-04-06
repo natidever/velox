@@ -1,4 +1,3 @@
-Here's a clean, professional, and hype README for your **Velox** Solana bot project on GitHub:
 
 ---
 
