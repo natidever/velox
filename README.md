@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/natidever/velox/blob/main/logo.jpg" alt="Velox Banner" width="100%" />
+  <img src="https://github.com/natidever/velox/blob/main/logo.jpg" alt="Velox Banner"  />
 </p>
 ---
 
@@ -31,7 +31,7 @@ Velox is an **async-first**, ultra-fast trading bot built for **Telegram** users
 
 ### 📦 Tech Stack
 
-- 🐍 Python (asyncio, aiohttp, pyrogram/telethon)
+- 🐍 Python (asyncio, aiohttp, aiogram)
 - 💬 Telegram Bot API
 - 🌊 Solana JSON RPC + WebSockets
 - 🧠 Dexscreener API
@@ -61,8 +61,7 @@ Create a `.env` file and add your config:
 
 ```env
 TELEGRAM_BOT_TOKEN=your_bot_token
-DEXSCREENER_API_KEY=your_api_key_if_needed
-RPC_URL=https://api.mainnet-beta.solana.com
+
 ```
 
 4. **Run the bot**
@@ -87,20 +86,14 @@ Velox allows users to create and manage wallets inside Telegram. While this is h
 - [x] Swap functionality
 - [x] Live token prices from Dexscreener
 - [ ] Raydium/Orca liquidity support
-- [ ] Portfolio tracking & PnL
-- [ ] Limit orders & sniper mode
-- [ ] NFT & token airdrop alerts
+
 
 ---
 
 ### 🧠 Credits
 
-Built with love for the Solana degens by [@yourusername](https://github.com/yourusername)
+Built with love for the Solana degens by [@natidever](https://github.com/natidever)
 
-Special thanks to:
-- Solana dev community
-- Dexscreener API
-- Jito Labs
 
 ---
 
@@ -109,5 +102,3 @@ Special thanks to:
 MIT License
 
 ---
-
-Let me know if you'd like this README in markdown format or need a logo badge, usage GIF, or Telegram invite button included!
